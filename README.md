@@ -12,3 +12,7 @@ Here I can play a little bit with the Jetpack Architecture Components.
 
 
 In development...
+
+![](ss_main.png | width=100)
+
+![](ss_main.png)
