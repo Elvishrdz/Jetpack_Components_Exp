@@ -5,4 +5,12 @@
     <string name="card_sample_description">Using the tutorial from the official website: https://developer.android.com/topic/libraries/architecture/room?hl=fr with some extra features</string>
     <string name="card_sample_title">Basic Example</string>
     <string name="card_sample_subtitle">Room Persistence Library</string>
+
+    <!--Basics with Room-->
+    <string name="add">Add</string>
+    <string name="delete">Delete</string>
+    <string name="product_name">Product Name</string>
+    <string name="product_id">Product ID</string>
+    <string name="product_name_empty">The product name is empty</string>
+    <string name="basic_data_persistence_with_room">Basic Data Persistence With Room</string>
 </resources>
