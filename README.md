@@ -12,7 +12,6 @@ Here I can play a little bit with the Jetpack Architecture Components.
 
 
 In development...
-
-![](ss_main.png | width=100)
-
+  
+--------------- Main Menu ---------------
 ![](ss_main.png)
