@@ -1,0 +1,89 @@
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources>\r\n    <string name=\"app_name\">Jetpack Components Experiments</string>\r\n    <string name=\"hello_jetpack\">Hello Jetpack!</string>\r\n    <string name=\"you_are_in_the_main_menu\">You\\'re already in the main menu!</string>\r\n    <string name=\"card_sample_description\">Using the tutorial from the official website: https://developer.android.com/topic/libraries/architecture/room?hl=fr with some extra features</string>\r\n    <string name=\"card_sample_title\">Basic Example</string>\r\n    <string name=\"card_sample_subtitle\">Room Persistence Library</string>\r\n\r\n    <!--Basics with Room-->\r\n    <string name=\"add\">Add</string>\r\n    <string name=\"delete\">Delete</string>\r\n    <string name=\"product_name\">Product Name</string>\r\n    <string name=\"product_id\">Product ID</string>\r\n    <string name=\"product_name_empty\">The product name is empty</string>\r\n    <string name=\"basic_data_persistence_with_room\">Basic Data Persistence With Room</string>\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/values/strings.xml	(revision 3fbc78bf7f4cc3d707833b7576cf7c803148feca)
++++ app/src/main/res/values/strings.xml	(date 1596446735829)
+@@ -13,4 +13,5 @@
+     <string name="product_id">Product ID</string>
+     <string name="product_name_empty">The product name is empty</string>
+     <string name="basic_data_persistence_with_room">Basic Data Persistence With Room</string>
++    <string name="title_activity_compose_basics">Compose Basics</string>
+ </resources>
+\ No newline at end of file
+Index: app/src/main/res/values/themes.xml
+===================================================================
+--- app/src/main/res/values/themes.xml	(date 1596446736195)
++++ app/src/main/res/values/themes.xml	(date 1596446736195)
+@@ -0,0 +1,8 @@
++<resources>
++  <style name="AppTheme.NoActionBar" >
++  <item name="windowActionBar">false</item>
++  <item name="windowNoTitle">true</item>
++</style>
++  <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
++  <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
++</resources>
+\ No newline at end of file
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"GradleSettings\">\r\n    <option name=\"linkedExternalProjectsSettings\">\r\n      <GradleProjectSettings>\r\n        <option name=\"testRunner\" value=\"PLATFORM\" />\r\n        <option name=\"distributionType\" value=\"DEFAULT_WRAPPED\" />\r\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\r\n        <option name=\"gradleJvm\" value=\"JDK\" />\r\n        <option name=\"modules\">\r\n          <set>\r\n            <option value=\"$PROJECT_DIR$\" />\r\n            <option value=\"$PROJECT_DIR$/app\" />\r\n          </set>\r\n        </option>\r\n        <option name=\"resolveModulePerSourceSet\" value=\"false\" />\r\n      </GradleProjectSettings>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/gradle.xml	(revision 3fbc78bf7f4cc3d707833b7576cf7c803148feca)
++++ .idea/gradle.xml	(date 1596445927355)
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="GradleMigrationSettings" migrationVersion="1" />
+   <component name="GradleSettings">
+     <option name="linkedExternalProjectsSettings">
+       <GradleProjectSettings>
+@@ -14,6 +15,7 @@
+           </set>
+         </option>
+         <option name="resolveModulePerSourceSet" value="false" />
++        <option name="useQualifiedModuleNames" value="true" />
+       </GradleProjectSettings>
+     </option>
+   </component>
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    package=\"com.eahm.jetpackcomponentsexp\">\r\n\r\n    <application\r\n        android:allowBackup=\"false\"\r\n        android:icon=\"@mipmap/ic_launcher\"\r\n        android:label=\"@string/app_name\"\r\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\r\n        android:supportsRtl=\"true\"\r\n        android:theme=\"@style/AppTheme\">\r\n        <activity android:name=\".ui.BasicExample\"/>\r\n        <activity android:name=\".ui.MainActivity\">\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n        </activity>\r\n    </application>\r\n\r\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/AndroidManifest.xml	(revision 3fbc78bf7f4cc3d707833b7576cf7c803148feca)
++++ app/src/main/AndroidManifest.xml	(date 1596446867535)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+-    package="com.eahm.jetpackcomponentsexp">
++    package="com.eahm.jetpackcomponentsexp" >
+ 
+     <application
+         android:allowBackup="false"
+@@ -8,9 +8,14 @@
+         android:label="@string/app_name"
+         android:roundIcon="@mipmap/ic_launcher_round"
+         android:supportsRtl="true"
+-        android:theme="@style/AppTheme">
+-        <activity android:name=".ui.BasicExample"/>
+-        <activity android:name=".ui.MainActivity">
++        android:theme="@style/AppTheme" >
++        <activity
++            android:name=".ui.compose.ComposeBasics"
++            android:label="@string/title_activity_compose_basics"
++            android:theme="@style/AppTheme.NoActionBar" >
++        </activity>
++        <activity android:name=".ui.BasicExample" />
++        <activity android:name=".ui.MainActivity" >
+             <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
+ 
