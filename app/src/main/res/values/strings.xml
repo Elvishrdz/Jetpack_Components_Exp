@@ -5,4 +5,19 @@
     <string name="card_sample_description">Using the tutorial from the official website: https://developer.android.com/topic/libraries/architecture/room?hl=fr with some extra features</string>
     <string name="card_sample_title">Basic Example</string>
     <string name="card_sample_subtitle">Room Persistence Library</string>
+    <string name="product_description">Throughout football\'s colourful history, Real Madrid have been the masters. This adidas home jersey takes the décollage artwork plastered throughout the club\'s home city as its inspiration. The soft, moisture-absorbing fabric includes mesh cutouts that mimic the artwork\'s standout \"ripped paper\" style. Premium embroidered team details add the finishing touch.  Details:  Regular fit is a slightly looser cut than what players wear on the pitch Short sleeves 100% recycled polyester doubleknit Lightweight fabric with a silky feel Sweat-wicking Climalite fabric Embroidered Real Madrid crest</string>
+    <string name="add_to_the_cart">Add To The Cart</string>
+    <string name="select_size">Select size</string>
+    <string name="color">Color</string>
+    <string name="quantity">Quantity</string>
+    <string name="official">Official</string>
+    <string name="online_store">Online Store</string>
+
+    <plurals name="review">
+        <item quantity="zero">There\'s no reviews yet</item>
+        <item quantity="one">(%d Review)</item>
+        <item quantity="many">(%d Reviews)</item>
+        <item quantity="other">(%d Reviews)</item>
+    </plurals>
+
 </resources>

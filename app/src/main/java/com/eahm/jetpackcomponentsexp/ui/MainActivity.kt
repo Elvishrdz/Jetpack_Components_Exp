@@ -17,6 +17,12 @@ class MainActivity : AppCompatActivity() {
             "Goes to MainActivity",
             "This is a basic example of the app menu for each new activity where a new functionality will be tested.",
             MainActivity::class.java
+        ),
+        Example(
+            "DataBinding",
+            "Connecting the view directly to the data source",
+            "This example is implemented with an Activity",
+            DataBinding::class.java
         )
     )
 

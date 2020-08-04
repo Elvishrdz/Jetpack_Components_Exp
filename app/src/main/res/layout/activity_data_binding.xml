@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="product"
+            type="com.eahm.jetpackcomponentsexp.models.Product" />
+
+        <import type="android.view.View" />
+
+        <import
+            alias="utils"
+            type="com.eahm.jetpackcomponentsexp.utils.BindingUtils" />
+
+        <variable
+            name="listener"
+            type="com.eahm.jetpackcomponentsexp.interfaces.OnSelectProductListener" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="ContentDescription"
+        tools:context=".ui.DataBinding">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                style="@style/DataBinding.Toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_gravity="center_horizontal"
+                app:layout_scrollFlags="scroll|snap" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/ivDetailToolbarLogo"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:padding="3dp"
+                        android:scaleType="centerInside"
+                        tools:srcCompat="@color/colorPrimaryDark" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/tvToolbarTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/TextAppearance.Title"
+                            android:text="@string/official" />
+
+                        <TextView
+                            android:id="@+id/tvToolbarSubtitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/TextAppearance.Subtitle"
+                            android:text="@string/online_store" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+
+                <ImageView
+                    android:id="@+id/ivDetailImage"
+                    android:layout_width="0dp"
+                    android:layout_height="270dp"
+                    android:scaleType="centerInside"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@tools:sample/backgrounds/scenic" />
+
+                <TextView
+                    android:id="@+id/tvDetailTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center_horizontal"
+                    android:text="@{product.name}"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+                    app:layout_constraintTop_toBottomOf="@+id/ivDetailImage"
+                    tools:text="Mens Real Madrid Home Shirt 20/21 White" />
+
+                <TextView
+                    android:id="@+id/tvDetailPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{utils.INSTANCE.formatPrice(product.price)}"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+                    app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDetailTitle"
+                    tools:text="104.95€" />
+
+                <TextView
+                    android:id="@+id/tvDetailSelectSize"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/select_size"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+                    app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDetailPrice" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvDetailSizes"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDetailSelectSize"
+                    tools:listitem="@layout/item_sizes" />
+
+
+                <TextView
+                    android:id="@+id/tvDetailColor"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/color"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+                    app:layout_constraintStart_toStartOf="@+id/rvDetailSizes"
+                    app:layout_constraintTop_toBottomOf="@+id/rvDetailSizes" />
+
+                <RadioGroup
+                    android:id="@+id/rgDetailColors"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:checkedButton="@id/rb1"
+                    android:gravity="start"
+                    android:onCheckedChanged="@{(colors,id)->listener.onColorSelected(colors,product)}"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDetailColor">
+
+                    <RadioButton
+                        android:id="@+id/rb1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#D10000" />
+
+                    <RadioButton
+                        android:id="@+id/rb2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#00E804" />
+
+                    <RadioButton
+                        android:id="@+id/rb3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#001DD6" />
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/discount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:textColor="@color/green"
+                    android:textSize="30sp"
+                    android:visibility="@{product.getDiscount()>0?View.VISIBLE:View.GONE}"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivDetailImage"
+                    app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:text="5%" />
+
+                <TextView
+                    android:id="@+id/tvDetailQuantity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/quantity"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+                    app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+                    app:layout_constraintTop_toBottomOf="@+id/rgDetailColors" />
+
+                <ImageButton
+                    android:id="@+id/ibtnDetailDecrement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{()->listener.onDecrement()}"
+                    app:layout_constraintEnd_toStartOf="@+id/tvDetailUnitsToBuy"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDetailQuantity"
+                    app:srcCompat="@android:drawable/ic_media_previous" />
+
+                <TextView
+                    android:id="@+id/tvDetailUnitsToBuy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginEnd="7dp"
+                    android:text="@{String.valueOf(product.unitsToBuy)}"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ibtnDetailIncrement"
+                    app:layout_constraintEnd_toStartOf="@+id/ibtnDetailIncrement"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/ibtnDetailDecrement"
+                    app:layout_constraintTop_toTopOf="@+id/ibtnDetailDecrement"
+                    tools:text="0" />
+
+                <ImageButton
+                    android:id="@+id/ibtnDetailIncrement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{() -> listener.onIncrement()}"
+                    app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/tvDetailUnitsToBuy"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDetailQuantity"
+                    app:srcCompat="@android:drawable/ic_media_next" />
+
+                <Button
+                    android:id="@+id/btnDetailAddToCart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_button"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:onClick="@{()-> listener.onAddToCart(product)}"
+                    android:padding="15dp"
+                    android:text="@string/add_to_the_cart"
+                    android:textColor="@color/light_text"
+                    app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+                    app:layout_constraintHorizontal_bias="0.97"
+                    app:layout_constraintStart_toEndOf="@+id/ibtnDetailIncrement"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDetailQuantity" />
+
+                <RatingBar
+                    android:id="@+id/rbDetailReviews"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="27dp"
+                    android:numStars="5"
+                    android:rating="@{product.rating}"
+                    app:layout_constraintEnd_toStartOf="@+id/tvDetailsReviews"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+                    app:layout_constraintTop_toBottomOf="@+id/ibtnDetailDecrement"
+                    tools:rating="3.7" />
+
+                <TextView
+                    android:id="@+id/tvDetailsReviews"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{@plurals/review(product.reviewsNumber, product.reviewsNumber)}"
+                    app:layout_constraintBottom_toBottomOf="@+id/rbDetailReviews"
+                    app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/rbDetailReviews"
+                    app:layout_constraintTop_toTopOf="@+id/rbDetailReviews"
+                    tools:text="(28 Reviews)" />
+
+                <TextView
+                    android:id="@+id/tvDetailsDescription"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="70dp"
+                    android:text="@string/product_description"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+                    app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDetailsReviews" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineLeft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="20dp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineRight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="20dp" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+        <!--<include
+            android:id="@+id/main_content"
+            layout="@layout/content_main"
+            bind:product="@{product}" />
+-->
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>
