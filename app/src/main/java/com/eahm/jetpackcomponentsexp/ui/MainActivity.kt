@@ -8,6 +8,7 @@ import com.eahm.jetpackcomponentsexp.R
 import com.eahm.jetpackcomponentsexp.adapters.MainAdapter
 import com.eahm.jetpackcomponentsexp.models.Example
 import com.eahm.jetpackcomponentsexp.ui.databinding.DBProductDetail
+import com.eahm.jetpackcomponentsexp.ui.databinding.DBRegister
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -24,6 +25,12 @@ class MainActivity : AppCompatActivity() {
             "Connecting the view directly to the data source",
             "This example is implemented with an Activity",
             DBProductDetail::class.java
+        ),
+        Example(
+            "Binding Adapter, Methods and Converters",
+            "@BindingAdapter @BindingConversion @BindingMethods",
+            "Providing custom values to the attributes in the xml layout in this simple example of a register form. In this example we implement the data binding annotations.",
+            DBRegister::class.java
         )
     )
 

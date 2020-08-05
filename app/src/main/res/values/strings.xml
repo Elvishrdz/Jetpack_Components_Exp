@@ -12,6 +12,15 @@
     <string name="quantity">Quantity</string>
     <string name="official">Official</string>
     <string name="online_store">Online Store</string>
+    <string name="register_instructions">Complete the following fields to create your account</string>
+    <string name="create_account">Create Account</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="industry">Industry</string>
+    <string name="register">Register</string>
+    <string name="login_support_message">Already have an account?</string>
+    <string name="sign_in">Sign in</string>
 
     <plurals name="review">
         <item quantity="zero">There\'s no reviews yet</item>

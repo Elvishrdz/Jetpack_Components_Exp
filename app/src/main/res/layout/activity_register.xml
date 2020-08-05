@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" >
+
+    <data>
+        <variable
+            name="dayOrNight"
+            type="Boolean" />
+
+        <import type="java.util.List" />
+
+        <variable
+            name="industryOptions"
+            type="List&lt;String>" />
+
+        <variable
+            name="show"
+            type="Boolean" />
+
+        <variable
+            name="handler"
+            type="com.eahm.jetpackcomponentsexp.ui.databinding.DBRegister" />
+    </data>
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <ScrollView
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:background="@color/white">
+
+           <androidx.constraintlayout.widget.ConstraintLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:padding="16dp"
+               tools:ignore="ContentDescription"
+               tools:context=".ui.databinding.DBRegister">
+
+               <TextView
+                   android:id="@+id/tvRegisterCreateAccountTitle"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/create_account"
+                   android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                   android:textColor="@android:color/black"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintHorizontal_bias="0.0"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toTopOf="parent" />
+
+               <ImageView
+                   android:id="@+id/ivRegisterIcon"
+                   android:layout_width="40dp"
+                   android:layout_height="0dp"
+                   android:layout_marginStart="8dp"
+                   android:scaleType="centerInside"
+                   app:tint="@{dayOrNight}"
+                   app:layout_constraintBottom_toBottomOf="@+id/tvRegisterCreateAccountTitle"
+                   app:layout_constraintEnd_toStartOf="@+id/guideline"
+                   app:layout_constraintHorizontal_bias="0.0"
+                   app:layout_constraintStart_toEndOf="@+id/tvRegisterCreateAccountTitle"
+                   app:layout_constraintTop_toTopOf="@+id/tvRegisterCreateAccountTitle"
+                   app:srcCompat="@{dayOrNight}"
+                   tools:srcCompat="@android:drawable/ic_dialog_dialer" />
+
+               <ImageView
+                   android:id="@+id/ivRegisterImage"
+                   android:layout_width="0dp"
+                   android:layout_height="0dp"
+                   android:layout_marginStart="8dp"
+                   android:scaleType="centerInside"
+                   app:drawable="@{true}"
+                   app:layout_constraintBottom_toBottomOf="@+id/tvRegisterMessage"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="@+id/guideline"
+                   app:layout_constraintTop_toTopOf="parent"
+                   tools:srcCompat="@tools:sample/avatars" />
+
+               <TextView
+                   android:id="@+id/tvRegisterMessage"
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="8dp"
+                   android:layout_marginEnd="8dp"
+                   android:text="@string/register_instructions"
+                   android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                   app:layout_constraintEnd_toStartOf="@+id/guideline"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/tvRegisterCreateAccountTitle" />
+
+               <EditText
+                   android:id="@+id/etRegisterName"
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="16dp"
+                   android:ems="10"
+                   android:hint="@string/name"
+                   android:importantForAutofill="no"
+                   android:inputType="textPersonName"
+                   app:layout_constraintBottom_toTopOf="@+id/etRegisterEmail"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintHorizontal_bias="0.5"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/tvRegisterMessage" />
+
+               <EditText
+                   android:id="@+id/etRegisterEmail"
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="16dp"
+                   android:ems="10"
+                   android:hint="@string/email"
+                   android:inputType="textEmailAddress"
+                   app:layout_constraintBottom_toTopOf="@+id/etRegisterPassword"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintHorizontal_bias="0.5"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/etRegisterName"
+                   android:importantForAutofill="no" />
+
+               <EditText
+                   android:id="@+id/etRegisterPassword"
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="16dp"
+                   android:ems="10"
+                   android:hint="@string/password"
+                   android:inputType="textPassword"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintHorizontal_bias="0.5"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/etRegisterEmail"
+                   android:importantForAutofill="no" />
+
+               <TextView
+                   android:id="@+id/tvRegisterIndustry"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="24dp"
+                   android:text="@string/industry"
+                   android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintHorizontal_bias="0.0"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/etRegisterPassword" />
+
+               <Spinner
+                   android:id="@+id/sRegisterIndustryMenu"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="8dp"
+                   android:entries="@{industryOptions}"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintHorizontal_bias="0.0"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/tvRegisterIndustry"
+                   tools:entries="@tools:sample/us_zipcodes" />
+
+               <Button
+                   android:id="@+id/btnRegister"
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="32dp"
+                   android:text="@string/register"
+                   android:onClick="@{handler::signUp}"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/sRegisterIndustryMenu" />
+
+               <TextView
+                   android:id="@+id/tvRegisterHaveAccount"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="36dp"
+                   android:layout_marginBottom="8dp"
+                   android:text="@string/login_support_message"
+                   android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                   app:layout_constraintBottom_toTopOf="@+id/btnRegisterLogin"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintHorizontal_bias="0.5"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/btnRegister"
+                   app:layout_constraintVertical_bias="1.0" />
+
+               <Button
+                   android:id="@+id/btnRegisterLogin"
+                   style="@style/Widget.AppCompat.Button.Borderless"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/sign_in"
+                   app:layout_constraintBottom_toBottomOf="parent"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintHorizontal_bias="0.5"
+                   app:layout_constraintStart_toStartOf="parent" />
+
+               <androidx.constraintlayout.widget.Guideline
+                   android:id="@+id/guideline"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical"
+                   app:layout_constraintGuide_percent="0.6" />
+
+               <androidx.constraintlayout.widget.Group
+                   android:id="@+id/group"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:visibility="@{!show}"
+                   app:constraint_referenced_ids="tvRegisterHaveAccount,etRegisterPassword,ivRegisterImage,
+            @+id/etRegisterName,ivRegisterIcon,tvRegisterCreateAccountTitle,tvRegisterIndustry,tvRegisterMessage,btnRegister,
+            @+id/sRegisterIndustryMenu,guideline,etRegisterEmail,btnRegisterLogin,etRegisterName,sRegisterIndustryMenu"
+                   tools:layout_editor_absoluteX="16dp"
+                   tools:layout_editor_absoluteY="16dp" />
+
+
+           </androidx.constraintlayout.widget.ConstraintLayout>
+       </ScrollView>
+
+       <ProgressBar
+           android:id="@+id/pbRegisterLoading"
+           style="?android:attr/progressBarStyle"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:visibility="@{show}"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintHorizontal_bias="0.5"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent"
+           tools:visibility="gone" />
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</layout>
