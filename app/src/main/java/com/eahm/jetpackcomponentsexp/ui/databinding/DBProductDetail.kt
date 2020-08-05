@@ -1,21 +1,20 @@
-package com.eahm.jetpackcomponentsexp.ui
+package com.eahm.jetpackcomponentsexp.ui.databinding
 
 import android.os.Bundle
 import android.view.View
-import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.bumptech.glide.Glide
 import com.eahm.jetpackcomponentsexp.R
-import com.eahm.jetpackcomponentsexp.databinding.ActivityDataBindingBinding
+import com.eahm.jetpackcomponentsexp.databinding.ActivityProductDetailBinding
 import com.eahm.jetpackcomponentsexp.interfaces.OnSelectProductListener
 import com.eahm.jetpackcomponentsexp.models.Product
-import kotlinx.android.synthetic.main.activity_data_binding.*
+import kotlinx.android.synthetic.main.activity_product_detail.*
 
 
-class DataBinding : AppCompatActivity() {
+class DBProductDetail : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -29,9 +28,9 @@ class DataBinding : AppCompatActivity() {
          * 3. Compile project
          */
 
-        //setContentView(R.layout.activity_data_binding)
-        val binding : ActivityDataBindingBinding =
-            DataBindingUtil.setContentView(this, R.layout.activity_data_binding)
+        //setContentView(R.layout.activity_product_detail)
+        val binding : ActivityProductDetailBinding =
+            DataBindingUtil.setContentView(this, R.layout.activity_product_detail)
 
         val product = Product()
 
@@ -56,7 +55,7 @@ class DataBinding : AppCompatActivity() {
             }
 
             override fun onAddToCart(product : Product) {
-                Toast.makeText(this@DataBinding, "${product.name} : ${product.selectedSize.get().toString()} - ${product.selectedColor.get().toString()} -> ${product.unitsToBuy?.get()}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@DBProductDetail, "${product.name} : ${product.selectedSize.get().toString()} - ${product.selectedColor.get().toString()} -> ${product.unitsToBuy?.get()}", Toast.LENGTH_SHORT).show()
             }
 
         }

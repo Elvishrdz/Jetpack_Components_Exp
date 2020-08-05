@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.eahm.jetpackcomponentsexp.R
 import com.eahm.jetpackcomponentsexp.adapters.MainAdapter
 import com.eahm.jetpackcomponentsexp.models.Example
+import com.eahm.jetpackcomponentsexp.ui.databinding.DBProductDetail
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -22,7 +23,7 @@ class MainActivity : AppCompatActivity() {
             "DataBinding",
             "Connecting the view directly to the data source",
             "This example is implemented with an Activity",
-            DataBinding::class.java
+            DBProductDetail::class.java
         )
     )
 

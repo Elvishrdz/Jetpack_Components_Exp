@@ -4,7 +4,7 @@ import android.content.Context
 import android.view.View
 import android.widget.ImageView
 import com.bumptech.glide.Glide
-import kotlinx.android.synthetic.main.activity_data_binding.*
+import kotlinx.android.synthetic.main.activity_product_detail.*
 import java.util.*
 
 object BindingUtils {
