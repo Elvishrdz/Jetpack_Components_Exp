@@ -14,13 +14,25 @@
     <string name="online_store">Online Store</string>
     <string name="register_instructions">Complete the following fields to create your account</string>
     <string name="create_account">Create Account</string>
-    <string name="name">Name</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="industry">Industry</string>
     <string name="register">Register</string>
     <string name="login_support_message">Already have an account?</string>
     <string name="sign_in">Sign in</string>
+    <string name="gender">Gender</string>
+    <string name="name">Name</string>
+    <string name="phone">Phone</string>
+    <string name="address">Address</string>
+    <string name="edition_enterprise">Enterprise Edition</string>
+    <string name="edition_free">Free Edition</string>
+    <string name="subscribe_to_our_podcast">Subscribe to our podcast</string>
+    <string name="save">Save</string>
+    <string name="personal_data">Personal Data</string>
+    <string name="edition">Edition</string>
+    <string name="current_customer">Current Customer</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 
     <plurals name="review">
         <item quantity="zero">There\'s no reviews yet</item>

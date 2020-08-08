@@ -9,6 +9,7 @@ import com.eahm.jetpackcomponentsexp.adapters.MainAdapter
 import com.eahm.jetpackcomponentsexp.models.Example
 import com.eahm.jetpackcomponentsexp.ui.databinding.DBProductDetail
 import com.eahm.jetpackcomponentsexp.ui.databinding.DBRegister
+import com.eahm.jetpackcomponentsexp.ui.databinding.DBTwoWays
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -28,9 +29,15 @@ class MainActivity : AppCompatActivity() {
         ),
         Example(
             "Binding Adapter, Methods and Converters",
-            "@BindingAdapter @BindingConversion @BindingMethods",
+            "@BindingAdapter | @BindingConversion | @BindingMethods",
             "Providing custom values to the attributes in the xml layout in this simple example of a register form. In this example we implement the data binding annotations.",
             DBRegister::class.java
+        ),
+        Example(
+            "Two-Way Binding",
+            "@Bindable | @InverseMethod",
+            "In this example you can see how the changes in the view are reflected in the model. If you click in the button you will see a Toast with all the current selected data thanks to the two-way Data Binding. Implemented in EditText, Spinner, RadioGroup and CheckBox",
+            DBTwoWays::class.java
         )
     )
 
