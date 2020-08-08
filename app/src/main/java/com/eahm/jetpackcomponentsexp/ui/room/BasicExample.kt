@@ -1,4 +1,4 @@
-package com.eahm.jetpackcomponentsexp.ui
+package com.eahm.jetpackcomponentsexp.ui.room
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

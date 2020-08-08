@@ -15,7 +15,7 @@
         <activity android:name=".ui.databinding.DBTwoWays"/>
         <activity android:name=".ui.databinding.DBRegister" />
         <activity android:name=".ui.databinding.DBProductDetail" />
-        <activity android:name=".ui.BasicExample"/>
+        <activity android:name=".ui.room.BasicExample"/>
         <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.eahm.jetpackcomponentsexp.R
 import com.eahm.jetpackcomponentsexp.interfaces.IProductOptions
 import com.eahm.jetpackcomponentsexp.models.Product
-import com.eahm.jetpackcomponentsexp.ui.BasicExample
 
 class ProductAdapter(
     private val productCallback: IProductOptions

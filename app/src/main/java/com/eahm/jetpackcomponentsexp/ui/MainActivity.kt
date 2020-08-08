@@ -10,6 +10,7 @@ import com.eahm.jetpackcomponentsexp.models.Example
 import com.eahm.jetpackcomponentsexp.ui.databinding.DBProductDetail
 import com.eahm.jetpackcomponentsexp.ui.databinding.DBRegister
 import com.eahm.jetpackcomponentsexp.ui.databinding.DBTwoWays
+import com.eahm.jetpackcomponentsexp.ui.room.BasicExample
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -38,6 +39,12 @@ class MainActivity : AppCompatActivity() {
             "@Bindable | @InverseMethod",
             "In this example you can see how the changes in the view are reflected in the model. If you click in the button you will see a Toast with all the current selected data thanks to the two-way Data Binding. Implemented in EditText, Spinner, RadioGroup and CheckBox",
             DBTwoWays::class.java
+        ),
+        Example(
+            "Room | Persistence Library ",
+            "Basics",
+            "A simple form to insert and delete data from a local database of products",
+            BasicExample::class.java
         )
     )
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#DADADA"
-    tools:context=".ui.BasicExample">
+    tools:context=".ui.room.BasicExample">
 
     <TextView
         android:id="@+id/tvBasicTitle"
