@@ -1,4 +1,4 @@
-package com.eahm.jetpackcomponentsexp.viewmodel
+package com.eahm.jetpackcomponentsexp.viewmodels
 
 import android.app.Application 
 import androidx.lifecycle.AndroidViewModel

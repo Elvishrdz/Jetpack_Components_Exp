@@ -11,7 +11,7 @@ import com.eahm.jetpackcomponentsexp.R
 import com.eahm.jetpackcomponentsexp.adapters.ProductAdapter
 import com.eahm.jetpackcomponentsexp.interfaces.IProductOptions
 import com.eahm.jetpackcomponentsexp.models.Product
-import com.eahm.jetpackcomponentsexp.viewmodel.BasicExampleViewModel
+import com.eahm.jetpackcomponentsexp.viewmodels.BasicExampleViewModel
 import kotlinx.android.synthetic.main.activity_basic_example.*
 
 class BasicExample : AppCompatActivity(), IProductOptions {
