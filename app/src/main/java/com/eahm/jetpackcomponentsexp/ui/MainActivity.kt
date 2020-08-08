@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.eahm.jetpackcomponentsexp.R
 import com.eahm.jetpackcomponentsexp.adapters.MainAdapter
 import com.eahm.jetpackcomponentsexp.models.Example
+import com.eahm.jetpackcomponentsexp.ui.navigation.NavBasics
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -17,6 +18,12 @@ class MainActivity : AppCompatActivity() {
             "Goes to MainActivity",
             "This is a basic example of the app menu for each new activity where a new functionality will be tested.",
             MainActivity::class.java
+        ),
+        Example(
+            "Basics",
+            "Navigation",
+            "The most basic navigation system managed by the jetpack navigation library.",
+            NavBasics::class.java
         )
     )
 

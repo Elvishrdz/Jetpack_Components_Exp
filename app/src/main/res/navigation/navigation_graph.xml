@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/destination01">
+    <fragment
+        android:id="@+id/destination01"
+        android:name="com.eahm.jetpackcomponentsexp.ui.navigation.destinations.Destination01"
+        android:label="fragment_destination01"
+        tools:layout="@layout/fragment_destination01" >
+        <action
+            android:id="@+id/action_destination01_to_destination02"
+            app:destination="@id/destination02" />
+    </fragment>
+    <fragment
+        android:id="@+id/destination02"
+        android:name="com.eahm.jetpackcomponentsexp.ui.navigation.destinations.Destination02"
+        android:label="fragment_destination02"
+        tools:layout="@layout/fragment_destination02" >
+        <action
+            android:id="@+id/action_destination02_to_destination03"
+            app:destination="@id/destination03" />
+    </fragment>
+    <fragment
+        android:id="@+id/destination03"
+        android:name="com.eahm.jetpackcomponentsexp.ui.navigation.destinations.Destination03"
+        android:label="fragment_destination03"
+        tools:layout="@layout/fragment_destination03" >
+        <action
+            android:id="@+id/action_destination03_to_destination04"
+            app:destination="@id/destination04" />
+    </fragment>
+    <fragment
+        android:id="@+id/destination04"
+        android:name="com.eahm.jetpackcomponentsexp.ui.navigation.destinations.Destination04"
+        android:label="fragment_destination04"
+        tools:layout="@layout/fragment_destination04" >
+        <action
+            android:id="@+id/action_destination04_to_destination05"
+            app:destination="@id/destination05" />
+    </fragment>
+    <fragment
+        android:id="@+id/destination05"
+        android:name="com.eahm.jetpackcomponentsexp.ui.navigation.destinations.Destination05"
+        android:label="fragment_destination05"
+        tools:layout="@layout/fragment_destination05" >
+        <action
+            android:id="@+id/action_destination05_to_destination06"
+            app:destination="@id/destination06" />
+    </fragment>
+    <fragment
+        android:id="@+id/destination06"
+        android:name="com.eahm.jetpackcomponentsexp.ui.navigation.destinations.Destination06"
+        android:label="fragment_destination06"
+        tools:layout="@layout/fragment_destination06" >
+        <action
+            android:id="@+id/action_destination06_to_destination07"
+            app:destination="@id/destination07" />
+    </fragment>
+    <fragment
+        android:id="@+id/destination07"
+        android:name="com.eahm.jetpackcomponentsexp.ui.navigation.destinations.Destination07"
+        android:label="fragment_destination07"
+        tools:layout="@layout/fragment_destination07" />
+</navigation>
