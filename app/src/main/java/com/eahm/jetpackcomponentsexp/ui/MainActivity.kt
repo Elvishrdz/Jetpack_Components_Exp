@@ -23,26 +23,26 @@ class MainActivity : AppCompatActivity() {
             MainActivity::class.java
         ),
         Example(
+            "Basics",
             "DataBinding",
-            "Connecting the view directly to the data source",
-            "This example is implemented with an Activity",
+            "Connecting the view directly to the data source. This example is implemented with an Activity",
             DBProductDetail::class.java
         ),
         Example(
             "Binding Adapter, Methods and Converters",
-            "@BindingAdapter | @BindingConversion | @BindingMethods",
-            "Providing custom values to the attributes in the xml layout in this simple example of a register form. In this example we implement the data binding annotations.",
+            "DataBinding",
+            "@BindingAdapter | @BindingConversion | @BindingMethods\nProviding custom values to the attributes in the xml layout in this simple example of a register form. In this example we implement the data binding annotations.",
             DBRegister::class.java
         ),
         Example(
             "Two-Way Binding",
-            "@Bindable | @InverseMethod",
-            "In this example you can see how the changes in the view are reflected in the model. If you click in the button you will see a Toast with all the current selected data thanks to the two-way Data Binding. Implemented in EditText, Spinner, RadioGroup and CheckBox",
+            "DataBinding",
+            "@Bindable | @InverseMethod\nIn this example you can see how the changes in the view are reflected in the model. If you click in the button you will see a Toast with all the current selected data thanks to the two-way Data Binding. Implemented in EditText, Spinner, RadioGroup and CheckBox",
             DBTwoWays::class.java
         ),
         Example(
-            "Room | Persistence Library ",
             "Basics",
+            "Room | Persistence Library",
             "A simple form to insert and delete data from a local database of products",
             BasicExample::class.java
         )
