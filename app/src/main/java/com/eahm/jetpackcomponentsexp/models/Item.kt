@@ -6,7 +6,7 @@ import androidx.databinding.ObservableInt
 import com.eahm.jetpackcomponentsexp.observable.CounterObservableInt
 
 
-class Product {
+class Item {
     val id = "3507"
     val name = "Mens Real Madrid Home Shirt 20/21 White"
     val vendorName = "Tienda La 80"

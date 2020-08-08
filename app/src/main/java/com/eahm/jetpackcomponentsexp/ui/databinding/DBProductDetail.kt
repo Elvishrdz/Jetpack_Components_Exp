@@ -10,7 +10,7 @@ import com.bumptech.glide.Glide
 import com.eahm.jetpackcomponentsexp.R
 import com.eahm.jetpackcomponentsexp.databinding.ActivityProductDetailBinding
 import com.eahm.jetpackcomponentsexp.interfaces.OnSelectProductListener
-import com.eahm.jetpackcomponentsexp.models.Product
+import com.eahm.jetpackcomponentsexp.models.Item
 import kotlinx.android.synthetic.main.activity_product_detail.*
 
 
@@ -32,11 +32,11 @@ class DBProductDetail : AppCompatActivity() {
         val binding : ActivityProductDetailBinding =
             DataBindingUtil.setContentView(this, R.layout.activity_product_detail)
 
-        val product = Product()
+        val item = Item()
 
-        binding.product = product
+        binding.item = item
         binding.listener = object : OnSelectProductListener{
-            override fun onColorSelected(colors: RadioGroup, product: Product) {
+            override fun onColorSelected(colors: RadioGroup, item: Item) {
                  /*for (i in 0 until colors.childCount) {
                     val rb = colors.getChildAt(i) as RadioButton
                     if (rb.isChecked) {
@@ -47,23 +47,23 @@ class DBProductDetail : AppCompatActivity() {
             }
 
             override fun onIncrement() {
-                product.unitsToBuy?.increment()
+                item.unitsToBuy?.increment()
             }
 
             override fun onDecrement() {
-                product.unitsToBuy?.decrement()
+                item.unitsToBuy?.decrement()
             }
 
-            override fun onAddToCart(product : Product) {
-                Toast.makeText(this@DBProductDetail, "${product.name} : ${product.selectedSize.get().toString()} - ${product.selectedColor.get().toString()} -> ${product.unitsToBuy?.get()}", Toast.LENGTH_SHORT).show()
+            override fun onAddToCart(item : Item) {
+                Toast.makeText(this@DBProductDetail, "${item.name} : ${item.selectedSize.get().toString()} - ${item.selectedColor.get().toString()} -> ${item.unitsToBuy?.get()}", Toast.LENGTH_SHORT).show()
             }
 
         }
 
-        if(product.imageUrl.isNotEmpty()){
+        if(item.imageUrl.isNotEmpty()){
             ivDetailImage.visibility = View.VISIBLE
             Glide.with(this)
-                .load(product.imageUrl)
+                .load(item.imageUrl)
                 .into(ivDetailImage)
         }
         else {

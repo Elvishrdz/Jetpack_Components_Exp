@@ -5,8 +5,8 @@
 
     <data>
         <variable
-            name="product"
-            type="com.eahm.jetpackcomponentsexp.models.Product" />
+            name="item"
+            type="com.eahm.jetpackcomponentsexp.models.Item" />
 
         <import type="android.view.View" />
 
@@ -104,7 +104,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:gravity="center_horizontal"
-                    android:text="@{product.name}"
+                    android:text="@{item.name}"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
@@ -118,7 +118,7 @@
                     android:id="@+id/tvDetailPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{utils.INSTANCE.formatPrice(product.price)}"
+                    android:text="@{utils.INSTANCE.formatPrice(item.price)}"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
@@ -167,7 +167,7 @@
                     android:layout_height="wrap_content"
                     android:checkedButton="@id/rb1"
                     android:gravity="start"
-                    android:onCheckedChanged="@{(colors,id)->listener.onColorSelected(colors,product)}"
+                    android:onCheckedChanged="@{(colors,id)->listener.onColorSelected(colors,item)}"
                     android:orientation="horizontal"
                     app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -200,7 +200,7 @@
                     android:gravity="end"
                     android:textColor="@color/green"
                     android:textSize="30sp"
-                    android:visibility="@{product.getDiscount()>0?View.VISIBLE:View.GONE}"
+                    android:visibility="@{item.getDiscount()>0?View.VISIBLE:View.GONE}"
                     app:layout_constraintBottom_toBottomOf="@+id/ivDetailImage"
                     app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
                     app:layout_constraintHorizontal_bias="1.0"
@@ -238,7 +238,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="7dp"
                     android:layout_marginEnd="7dp"
-                    android:text="@{String.valueOf(product.unitsToBuy)}"
+                    android:text="@{String.valueOf(item.unitsToBuy)}"
                     android:textSize="24sp"
                     app:layout_constraintBottom_toBottomOf="@+id/ibtnDetailIncrement"
                     app:layout_constraintEnd_toStartOf="@+id/ibtnDetailIncrement"
@@ -264,7 +264,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_button"
                     android:foreground="?attr/selectableItemBackground"
-                    android:onClick="@{()-> listener.onAddToCart(product)}"
+                    android:onClick="@{()-> listener.onAddToCart(item)}"
                     android:padding="15dp"
                     android:text="@string/add_to_the_cart"
                     android:textColor="@color/light_text"
@@ -280,7 +280,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="27dp"
                     android:numStars="5"
-                    android:rating="@{product.rating}"
+                    android:rating="@{item.rating}"
                     app:layout_constraintEnd_toStartOf="@+id/tvDetailsReviews"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintHorizontal_chainStyle="packed"
@@ -292,7 +292,7 @@
                     android:id="@+id/tvDetailsReviews"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{@plurals/review(product.reviewsNumber, product.reviewsNumber)}"
+                    android:text="@{@plurals/review(item.reviewsNumber, item.reviewsNumber)}"
                     app:layout_constraintBottom_toBottomOf="@+id/rbDetailReviews"
                     app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
                     app:layout_constraintHorizontal_bias="0.5"

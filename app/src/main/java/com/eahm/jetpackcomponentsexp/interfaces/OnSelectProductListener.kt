@@ -1,11 +1,11 @@
 package com.eahm.jetpackcomponentsexp.interfaces
 
 import android.widget.RadioGroup
-import com.eahm.jetpackcomponentsexp.models.Product
+import com.eahm.jetpackcomponentsexp.models.Item
 
 interface OnSelectProductListener {
-    fun onColorSelected(colors : RadioGroup, product : Product)
+    fun onColorSelected(colors : RadioGroup, item : Item)
     fun onIncrement()
     fun onDecrement()
-    fun onAddToCart(product : Product)
+    fun onAddToCart(item : Item)
 }
