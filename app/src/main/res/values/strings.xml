@@ -49,4 +49,8 @@
         <item quantity="other">(%d Reviews)</item>
     </plurals>
 
+    <!--Basics with Navigation-->
+    <string name="welcome_to">Welcome to: %1$s</string>
+    <string name="next">Next</string>
+    <string name="jetpack_navigation">Jetpack Navigation</string>
 </resources>

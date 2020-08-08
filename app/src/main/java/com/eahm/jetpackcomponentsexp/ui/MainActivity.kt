@@ -11,6 +11,7 @@ import com.eahm.jetpackcomponentsexp.ui.databinding.DBProductDetail
 import com.eahm.jetpackcomponentsexp.ui.databinding.DBRegister
 import com.eahm.jetpackcomponentsexp.ui.databinding.DBTwoWays
 import com.eahm.jetpackcomponentsexp.ui.room.BasicExample
+import com.eahm.jetpackcomponentsexp.ui.navigation.NavBasics
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -45,6 +46,12 @@ class MainActivity : AppCompatActivity() {
             "Room | Persistence Library",
             "A simple form to insert and delete data from a local database of products",
             BasicExample::class.java
+        ),
+        Example(
+            "Basics",
+            "Navigation",
+            "The most basic navigation system managed by the jetpack navigation library.",
+            NavBasics::class.java
         )
     )
 
