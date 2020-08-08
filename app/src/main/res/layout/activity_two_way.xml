@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.eahm.jetpackcomponentsexp.bindings.BindingConverter" />
+
+        <variable
+            name="viewModel"
+            type="com.eahm.jetpackcomponentsexp.viewmodels.CustomerViewModel" />
+        <variable
+            name="handler"
+            type="com.eahm.jetpackcomponentsexp.ui.databinding.DBTwoWays" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        tools:context=".ui.databinding.DBTwoWays">
+
+        <TextView
+            android:id="@+id/tvTwTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/personal_data"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etTwName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:ems="10"
+            android:hint="@string/name"
+            android:inputType="textPersonName"
+            android:text="@={viewModel.name}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTwTitle"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/etTwPhone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="@string/phone"
+            android:inputType="phone"
+            android:text="@={viewModel.phone}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etTwName"
+            android:importantForAutofill="no"/>
+
+        <EditText
+            android:id="@+id/etTwAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="@string/address"
+            android:inputType="textPostalAddress"
+            android:text="@={viewModel.address}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etTwPhone"
+            android:importantForAutofill="no"/>
+
+        <TextView
+            android:id="@+id/tvTwGender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/gender"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etTwAddress" />
+
+        <Spinner
+            android:id="@+id/sTwGender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:entries="@array/genders"
+            android:selection="@={BindingConverter.genderToInt(viewModel.gender)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTwGender" />
+
+        <TextView
+            android:id="@+id/tvTwEdition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/edition"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+
+            app:layout_constraintHorizontal_bias="0.0" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sTwGender" />
+
+        <RadioGroup
+            android:id="@+id/rgTwEdition"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:checkedButton="@={BindingConverter.booleanToInt(viewModel.enterpriseEdition)}"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTwEdition">
+
+            <RadioButton
+                android:id="@+id/rbTw01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="@string/edition_enterprise" />
+
+            <RadioButton
+                android:id="@+id/rbTw02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="@string/edition_free" />
+        </RadioGroup>
+
+        <CheckBox
+            android:id="@+id/cbTwSubscribePodcast"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="37dp"
+            android:checked="@={viewModel.subscriber}"
+            android:text="@string/subscribe_to_our_podcast"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rgTwEdition" />
+
+        <Button
+            android:id="@+id/btnTwSave"
+            android:layout_width="409dp"
+            android:layout_height="wrap_content"
+            android:text="@string/save"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            android:onClick="@{handler::saveCustomer}"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -3,6 +3,31 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:windowBackground">@color/colorPrimary</item>
+
     </style>
+
+    <style name="DataBinding.Toolbar" parent="Base.Widget.AppCompat.Toolbar">
+        <item name="titleTextAppearance">@style/TextAppearance.Title</item>
+        <item name="subtitleTextAppearance">@style/TextAppearance.Subtitle</item>
+
+        <item name="android:background">@color/white</item>
+        <item name="android:elevation">3dp</item>
+
+        <!--
+        app:titleTextColor="@color/black"
+        app:subtitleTextColor="@color/black"
+        android:backgroundTint="@color/white"
+        android:elevation="7dp"-->
+    </style>
+
+    <style name="TextAppearance.Title" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">21sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextAppearance.Subtitle" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Subtitle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+
 </resources>
