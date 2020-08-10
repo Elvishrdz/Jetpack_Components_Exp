@@ -29,6 +29,7 @@ android {
     }
 
     kotlinOptions {
+        // Required by: OneTimeWorkRequestBuilder (See WMBasics.kt -> runWorker() method)
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 
@@ -59,5 +60,9 @@ dependencies {
     def nav_version = "2.3.0"
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    /*Jetpack Work Manager*/
+    def work_version = "2.4.0"
+    implementation "androidx.work:work-runtime-ktx:$work_version"
 
 }

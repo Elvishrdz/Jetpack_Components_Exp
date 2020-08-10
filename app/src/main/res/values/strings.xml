@@ -53,4 +53,9 @@
     <string name="welcome_to">Welcome to: %1$s</string>
     <string name="next">Next</string>
     <string name="jetpack_navigation">Jetpack Navigation</string>
+
+    <!--Basics with WorkManager-->
+    <string name="how_long_should_the_worker">How long should the worker last? (in seconds)</string>
+    <string name="launch_worker">Launch Worker</string>
+    <string name="jetpack_worker_manager">Jetpack Work Manager</string>
 </resources>
