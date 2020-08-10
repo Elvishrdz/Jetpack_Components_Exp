@@ -22,6 +22,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    kotlinOptions{
+        // Required by: OneTimeWorkRequestBuilder (See WMBasics.kt -> runWorker() method)
+        jvmTarget = '1.8'
+    }
 }
 
 dependencies {
@@ -37,4 +42,8 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     api 'com.google.android.material:material:1.3.0-alpha02' // Uses: Snackbar
+
+    def work_version = "2.4.0"
+    implementation "androidx.work:work-runtime-ktx:$work_version"
+
 }
